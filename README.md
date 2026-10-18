@@ -1,9 +1,11 @@
-# BuckeTT Bros
+# SwishTT Shot
+
+[![SwishTT Shot title screen](docs/screenshot.jpg)](https://adong.github.io/swishtt-shot/)
 
 An arcade basketball shooting machine (投篮机) starring Teddy and his jump shot. You stand at the end of a neon arcade machine and shoot at a hoop on a sliding backboard. A ramp rolls every ball back to your feet, and the clock gives you 60 seconds a round. It's built with Claude Code from plain JavaScript and Three.js, in the same style as Metro Surfer and the other Teddy & Tommy games.
 There are no image, model or audio files. The machine, the room and the ball are boxes, spheres and canvas-painted textures, the characters come from the shared kit (`kit/`), and every sound is synthesised.
 
-The name lives in one place, [js/title.js](js/title.js). "BuckeTT Bros" is a working title (a bucket is a basket).
+The name lives in one place, [js/title.js](js/title.js). Alan named it SwishTT Shot. (BuckeTT Bros is the separate 2-on-2 street basketball game.)
 
 ## Play
 
