@@ -2,6 +2,10 @@
 
 [![SwishTT Shot title screen](docs/screenshot.jpg)](https://adong.github.io/swishtt-shot/)
 
+An arcade basketball shooting machine: sink Teddy's jump shot before the 60-second clock runs out.
+
+**中文：** 投篮机：60 秒倒计时结束前，用 Teddy 的跳投多进几个球。
+
 Press **?** any time (or tap the round **?** button on the left edge) to see the keys. The game waits while you look.
 Tap the language button under it (the A文 icon) to switch between English and 中文; the dashboard and every game remember the choice.
 
