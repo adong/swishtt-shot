@@ -7,6 +7,7 @@
   const { makeCanvas, toTexture, std, roundRect, FONT, radialTexture } = Kit.gfx;
 
   const A = (HT.arena = {});
+  const tr = (en) => (Kit.lang ? Kit.lang.t(en) : en); // canvas text in 中文 too (Kit.lang)
   let renderer, scene, camera;
   const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
   const slope = P.RAMP.slope;
@@ -123,8 +124,8 @@
     g.fillStyle = '#ffffff';
     g.strokeStyle = '#14121f';
     g.lineWidth = 10;
-    g.strokeText('SHOOT!', 512, 112);
-    g.fillText('SHOOT!', 512, 112);
+    g.strokeText(tr('SHOOT!'), 512, 112);
+    g.fillText(tr('SHOOT!'), 512, 112);
     return toTexture(c);
   }
 
@@ -274,6 +275,7 @@
     }
     // the front (the tray's lip) with a chrome rail on top
     const fm = std('#ffffff', { map: frontTexture(), roughness: 0.5 });
+    if (Kit.lang) Kit.lang.onChange(() => { fm.map.dispose(); fm.map = frontTexture(); fm.needsUpdate = true; });
     const side = std('#d4241e', { roughness: 0.5 });
     const fh = P.LIP.max.y, fd = P.LIP.max.z - P.LIP.min.z;
     box(W + 0.28, fh, fd, [side, side, side, side, fm, side], 0, fh / 2, (P.LIP.min.z + P.LIP.max.z) / 2);
@@ -341,7 +343,7 @@
 
   // Scoreboard on the header: SCORE on the left, the title and round in the middle, TIME on the right.
   A.drawHeader = function (o) {
-    const key = `${o.score}|${o.time}|${o.round}|${o.fire}|${o.label || ''}`;
+    const key = `${o.score}|${o.time}|${o.round}|${o.fire}|${o.label || ''}|${Kit.lang ? Kit.lang.get() : ''}`;
     if (key === header.key) return;
     header.key = key;
     const c = header.canvas, g = header.ctx, W = c.width, H = c.height;
@@ -367,13 +369,13 @@
       g.fillStyle = '#c9c3e6';
       g.fillText(text, x, H * 0.24);
     };
-    lab('SCORE', 150);
+    lab(tr('SCORE'), 150);
     led(String(o.score).padStart(3, '0'), 150, H * 0.62, Math.round(H * 0.5), '#ff4a4a');
-    lab('TIME', W - 150);
+    lab(tr('TIME'), W - 150);
     led(String(o.time).padStart(2, '0'), W - 150, H * 0.62, Math.round(H * 0.5), '#4aff7a');
     const title = (window.HT_TITLE || 'HOOPS').toUpperCase();
     led(title, W / 2, H * 0.42, Math.min(Math.round(H * 0.34), Math.floor(560 / Math.max(6, title.length) * 1.5)), o.fire ? '#ffb02e' : '#ffd400');
-    led(o.label || `ROUND ${o.round}`, W / 2, H * 0.78, Math.round(H * 0.18), '#18d4ff');
+    led(tr(o.label || `ROUND ${o.round}`), W / 2, H * 0.78, Math.round(H * 0.18), '#18d4ff');
     header.tex.needsUpdate = true;
   };
 

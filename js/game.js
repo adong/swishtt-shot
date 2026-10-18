@@ -280,7 +280,7 @@
     G.goal = goals[G.round - 1] || goals[goals.length - 1] + 2 * (G.round - goals.length);
     setState('countdown');
     const msg = G.round === 1 ? 'GET READY!' : s[0] ? 'THE HOOP IS MOVING!' : 'HERE WE GO!';
-    banner(`<div class="big">ROUND ${G.round}</div><div class="sub">${msg} &nbsp; GOAL <b>${G.goal}</b> POINTS</div>`);
+    banner(`<div class="big">ROUND ${G.round}</div><div class="sub"><span>${msg}</span> &nbsp; GOAL <b>${G.goal}</b> POINTS</div>`);
     A.setLights('idle');
     S.music('play');
     updateHud(true);
@@ -299,13 +299,13 @@
       sfx('fanfare');
       sfx('crowd', true);
       A.setLights('win');
-      banner(`<div class="big">ROUND CLEAR!</div><div class="sub">${G.roundScore} POINTS · NEXT: ROUND <b>${G.round + 1}</b></div>`);
+      banner(`<div class="big">ROUND CLEAR!</div><div class="sub">${G.roundScore} POINTS · NEXT: <b>ROUND ${G.round + 1}</b></div>`);
       shooter.celebrate(2.8, true);
       confetti();
     } else {
       sfx('aww');
       const close = G.goal - G.roundScore <= 4;
-      banner(`<div class="big">TIME'S UP!</div><div class="sub">${close ? 'SO CLOSE! ' : ''}${G.roundScore} OF <b>${G.goal}</b> POINTS</div>`);
+      banner(`<div class="big">TIME'S UP!</div><div class="sub">${close ? '<span>SO CLOSE!</span> ' : ''}${G.roundScore} OF <b>${G.goal}</b> POINTS</div>`);
     }
     G.roundOk = ok;
     P.setMotion(world, 0);

@@ -3,6 +3,7 @@
 [![SwishTT Shot title screen](docs/screenshot.jpg)](https://adong.github.io/swishtt-shot/)
 
 Press **?** any time (or tap the round **?** button on the left edge) to see the keys. The game waits while you look.
+Tap **中文 / EN** under it to switch between English and 中文 (the dashboard and every game remember the choice).
 
 An arcade basketball shooting machine (投篮机) starring Teddy and his jump shot. You stand at the end of a neon arcade machine and shoot at a hoop on a sliding backboard. A ramp rolls every ball back to your feet, and the clock gives you 60 seconds a round. It's built with Claude Code from plain JavaScript and Three.js, in the same style as Metro Surfer and the other Teddy & Tommy games.
 There are no image, model or audio files. The machine, the room and the ball are boxes, spheres and canvas-painted textures, the characters come from the shared kit (`kit/`), and every sound is synthesised.
@@ -116,6 +117,8 @@ js/arena.js            the room, the machine, the sliding backboard, the verlet 
 js/players.js          extra poses (hold, aim, ready, catch, pass, yay) and the shooter: jump shot, celebrations
 js/buddy.js            the brother: his visit, catching and passing, treats, streak saving
 js/game.js             rounds, input, aim help, scoring, ON FIRE, HUD, screens, main loop, window.game
+js/keys.js             the keys the ? panel shows (Kit.help)
+js/zh.js               中文: every word on the page, the toasts, banners and the ? panel (Kit.lang); names and the logo stay English
 tools/check-physics.js the headless physics check (node tools/check-physics.js)
 kit/                   copy of ~/claude-games/kit (Three.js r149, people, roster, portraits, sound, bundler);
                        edit the kit there, not here

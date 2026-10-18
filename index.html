@@ -261,7 +261,7 @@
     .avatar .nm, .avatar.hero .nm { font-size: 12px; }
     .avatar .bs { font-size: 10px; }
     .picker { padding: 4px; gap: 6px; }
-    .tag, .howto, .credit, #title .best { display: none !important; }
+    .tag, .howto, .credit, .hint, #title .best { display: none !important; }
     .btn { padding: 8px 34px; }
     .big { font-size: clamp(36px, 12vh, 70px); }
     .card { padding: 8px 18px; }
@@ -308,7 +308,7 @@
 <div id="banner" class="hidden"></div>
 
 <div id="title" class="screen">
-  <div id="logo" class="logo"></div>
+  <div id="logo" class="logo" data-no-lang></div>
   <p class="tag">Swipe up to shoot! Make 3 in a row and you're ON FIRE. Call your brother to rebound for you.</p>
   <div class="pick-label">PICK YOUR SHOOTER</div>
   <div id="picker" class="picker" role="radiogroup" aria-label="Pick your shooter"></div>
@@ -366,6 +366,7 @@
 <script src="kit/roster.js"></script>
 <script src="kit/portraits.js"></script>
 <script src="kit/sound.js"></script>
+<script src="kit/lang.js"></script>
 <script src="kit/help.js"></script>
 <script src="js/title.js"></script>
 <script src="js/physics.js"></script>
@@ -375,5 +376,6 @@
 <script src="js/buddy.js"></script>
 <script src="js/game.js"></script>
 <script src="js/keys.js"></script>
+<script src="js/zh.js"></script>
 </body>
 </html>
